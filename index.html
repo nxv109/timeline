@@ -70,5 +70,26 @@
             <p>"Để thành công, bạn phải sẵn lòng thất bại."</p>
         </footer>
     </div>
+    <div id="scrollTop">
+        <img src="./images/icons8-forward-100.png" alt="icon sscroll top">
+    </div>
+
+    <script>
+        const idScroll = document.getElementById('scrollTop');
+        idScroll.style.transform = `rotate(-90deg)`;
+        window.addEventListener('scroll', () => {
+            if(window.pageYOffset === 0){
+                idScroll.style.transform = `rotate(-90deg)`;
+            }else{
+                idScroll.style.transform = `rotate(${window.pageYOffset}deg)`;
+            }
+        });
+
+        idScroll.addEventListener('click',() => {
+            document.documentElement.scrollTop = 0;
+            document.body.scrollTop = 0;
+        });
+        
+    </script>
 </body>
 </html>
