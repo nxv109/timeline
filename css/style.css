@@ -64,6 +64,7 @@ body:after {
   width: 100%;
   text-align: center;
   z-index: -100;
+  text-transform: uppercase;
 }
 
 .container {
@@ -154,7 +155,7 @@ body:after {
   height: 3rem;
   background: linear-gradient(135deg, #19838600 50%, #0c2829e8 50%);
   position: absolute;
-  top: 50%;
+  top: 49%;
   left: -2.5rem;
   transform: rotate(135deg) translateX(-50%);
   z-index: -1;
@@ -182,6 +183,18 @@ body:after {
     line-height: 5rem;
     top: 23%;
   }
+}
+#scrollTop {
+  width: 7rem;
+  height: 7rem;
+  position: fixed;
+  bottom: 3rem;
+  right: 5rem;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+#scrollTop > img {
+  width: 100%;
 }
 
 /*# sourceMappingURL=style.css.map */

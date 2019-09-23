@@ -70,6 +70,7 @@ body{
         width: 100%;
         text-align: center;
         z-index: -100;
+        text-transform: uppercase;
     }
 }
 
@@ -188,7 +189,7 @@ body{
                 height: 3rem;
                 background:linear-gradient(135deg, #19838600 50%, #0c2829e8 50%);
                 position: absolute;
-                top: 50%;
+                top: 49%;
                 left: -2.5rem;
                 transform: rotate(135deg) translateX(-50%);
                 z-index: -1;
@@ -221,5 +222,19 @@ body{
     body:after{
         line-height: 5rem;
         top: 23%;
+    }
+}
+
+#scrollTop{
+    width: 7rem;
+    height: 7rem;
+    position: fixed;
+    bottom: 3rem;
+    right: 5rem;
+    transition: all .2s;
+    cursor: pointer;
+
+    & > img{
+        width: 100%;
     }
 }
