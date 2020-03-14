@@ -108,7 +108,7 @@ body:after {
   box-shadow: inset 1px 1px 10px 1px #c4c4c4;
 }
 
-.timeline > h1 {
+.timeline > h2 {
   width: 100%;
   text-align: center;
   padding: 2rem;
