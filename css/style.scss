@@ -1,240 +1,243 @@
 // global
-%dis-col{
-    display: flex;
-    flex-flow: column;
-    align-items: center;
+%dis-col {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
 }
 
-%dis-row{
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
+%dis-row {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
 }
 
-%border{
-    border: 4px double #c4c4c4;
-    border-radius: 50%;
-    overflow: hidden;
+%border {
+  border: 4px double #c4c4c4;
+  border-radius: 50%;
+  overflow: hidden;
 }
 
 $m-b: 2rem;
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-html{
-    font-size: 62.5%;
+html {
+  font-size: 62.5%;
 }
 
-body{
-    font-family: 'Open Sans', sans-serif;
-    font-size: 1.6rem;
-    background: linear-gradient(165deg, #044b4e 5%, #506667 34%, #123C3E 5%);
-    background-repeat: no-repeat;
-    background-origin: border-box;
-    color: #fdffffcc;
-    position: relative;
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.6rem;
+  background: linear-gradient(165deg, #044b4e 5%, #506667 34%, #123C3E 5%);
+  background-repeat: no-repeat;
+  background-origin: border-box;
+  color: #fdffffcc;
+  position: relative;
 
-    h1{
-        font-size: 4rem;
-        letter-spacing: 0.2rem;
-        text-decoration: underline;
-    }
+  h1 {
+    font-size: 4rem;
+    letter-spacing: 0.2rem;
+    text-decoration: underline;
+  }
 
-    h3{
-        font-size: 2rem;
-        letter-spacing: 0.2rem;
-    }
+  h3 {
+    font-size: 2rem;
+    letter-spacing: 0.2rem;
+  }
 
-    p{
-        line-height: 2.5rem;
-        letter-spacing: 0.1rem;
-    }
+  p {
+    line-height: 2.5rem;
+    letter-spacing: 0.1rem;
+  }
 
-    &:after{
-        content: "Make awesome things that matter!";
-        position: absolute;
-        top: 28%;
-        left: 50%;
-        transform: translate(-50%, 50%) rotate(-15deg);
-        font-size: 3rem;
-        color: #123c3e;
-        font-weight: 900;
-        line-height: 1rem;
-        letter-spacing: 1.5rem;
-        word-spacing: 2rem;
-        text-shadow: 2px 3px 4px #123c3e;
-        width: 100%;
-        text-align: center;
-        z-index: -100;
-        text-transform: uppercase;
-    }
+  &:after {
+    content: "Make awesome things that matter!";
+    position: absolute;
+    top: 28%;
+    left: 50%;
+    transform: translate(-50%, 50%) rotate(-15deg);
+    font-size: 3rem;
+    color: #123c3e;
+    font-weight: 900;
+    line-height: 1rem;
+    letter-spacing: 1.5rem;
+    word-spacing: 2rem;
+    text-shadow: 2px 3px 4px #123c3e;
+    width: 100%;
+    text-align: center;
+    z-index: -100;
+    text-transform: uppercase;
+  }
 }
 
-.container{
-    width: 110rem;
-    margin: 0 auto;
+.container {
+  width: 110rem;
+  margin: 0 auto;
 }
 
-.info{
-    @extend %dis-col;
+.info {
+  @extend %dis-col;
 
-    &__title{
-        margin: 4rem;
-        text-align: center;
+  &__title {
+    margin: 4rem;
+    text-align: center;
+  }
+
+  &__avatar-box {
+    width: 15rem;
+    height: 15rem;
+    margin-bottom: $m-b;
+    @extend %border;
+
+    &>.info__avatar {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__profiles {
+    max-width: 53rem;
+    margin-bottom: $m-b;
+    letter-spacing: 0.2rem;
+
+    &>ul {
+      @extend %dis-col;
     }
 
-    &__avatar-box{
-        max-width: 15rem;
-        margin-bottom: $m-b;
-        @extend %border;
+    &>ul>li {
+      list-style: none;
+      padding: 8px 0;
+    }
+  }
 
-        & > .info__avatar{
-            width: 100%;
-            transform: scale(1.1);
-        }
+  &__socials {
+    @extend %dis-row;
+
+    &>a {
+      text-decoration: none;
+      color: inherit;
+      height: 4rem;
+      width: 4rem;
+      padding: 1rem;
+      @extend %border;
+      @extend %dis-row;
+      justify-content: center;
+      align-items: center;
+      margin: 2rem 1rem;
+      transition: all 0.3s;
     }
 
-    &__profiles{
-        max-width: 53rem;
-        margin-bottom: $m-b;
-        letter-spacing: 0.2rem;
-
-        & > ul{
-            @extend %dis-col;
-        }
-
-        & > ul > li{
-            list-style: none;
-            padding: 8px 0;
-        }
+    &> :hover {
+      box-shadow: inset 1px 1px 10px 1px #c4c4c4;
     }
-
-    &__socials{
-        @extend %dis-row;
-        
-        & > a{
-            text-decoration: none;
-            color: inherit;
-            height: 4rem;
-            width: 4rem;
-            padding: 1rem;
-            @extend %border;
-            @extend %dis-row;
-            justify-content: center;
-            align-items: center;
-            margin: 2rem 1rem;
-            transition: all 0.3s;
-        }
-
-        & > :hover{
-            box-shadow: inset 1px 1px 10px 1px #c4c4c4;
-        }
-    }
+  }
 }
 
 // timeline
-.timeline{
-    & > h2{
-        width: 100%;
-        text-align: center;
-        padding: 2rem;
+.timeline {
+  &>h2 {
+    width: 100%;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  &__box {
+    padding: 2rem;
+    position: relative;
+
+    &:before {
+      content: "";
+      width: 5px;
+      height: 100%;
+      background: #00212380;
+      position: absolute;
+      top: 0;
+      left: 3rem;
     }
 
-    &__box{
-        padding: 2rem;
-        position: relative;
+    &>.timeline__content {
+      background: #0d787b9e;
+      padding: 1.5rem;
+      margin: 1rem 1rem 5rem 10rem;
+      color: inherit;
+      border-left: 5px solid #0c2829e8;
+      border-radius: .5rem;
+      position: relative;
 
-        &:before{
-            content: "";
-            width: 5px;
-            height: 100%;
-            background: #00212380;
-            position: absolute;
-            top: 0;
-            left: 3rem;
-        }
+      &>h3 {
+        margin-bottom: 1rem;
+      }
 
-        & > .timeline__content{
-            background: #0d787b9e;
-            padding: 1.5rem;
-            margin: 1rem 1rem 5rem 10rem;
-            color: inherit;
-            border-left: 5px solid #0c2829e8;
-            border-radius: .5rem;
-            position: relative;
+      &:before {
+        content: "";
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 50%;
+        background: #00f9ff;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: -10rem;
+      }
 
-            & > h3{
-                margin-bottom: 1rem;
-            }
-
-            &:before{
-                content: "";
-                width: 1.5rem;
-                height: 1.5rem;
-                border-radius: 50%;
-                background:#00f9ff;
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
-                left: -10rem;
-            }
-
-            &:after{
-                content: "";
-                width: 3rem;
-                height: 3rem;
-                background:linear-gradient(135deg, #19838600 50%, #0c2829e8 50%);
-                position: absolute;
-                top: 49%;
-                left: -2.5rem;
-                transform: rotate(135deg) translateX(-50%);
-                z-index: -1;
-            }
-        }
+      &:after {
+        content: "";
+        width: 3rem;
+        height: 3rem;
+        background: linear-gradient(135deg, #19838600 50%, #0c2829e8 50%);
+        position: absolute;
+        top: 49%;
+        left: -2.5rem;
+        transform: rotate(135deg) translateX(-50%);
+        z-index: -1;
+      }
     }
+  }
 
 }
 
-.footer{
-    @extend %dis-row;
-    align-items: center;
-    justify-content: space-between;
+.footer {
+  @extend %dis-row;
+  align-items: center;
+  justify-content: space-between;
 
-    & > p{
-        text-decoration: underline;
-    }
+  &>p {
+    text-decoration: underline;
+  }
 }
 
-@media only screen and (max-width: 64em){
-    html{
-        font-size: 50%;
-    }
-    .container{
-        width: 100%;
-    }
+@media only screen and (max-width: 64em) {
+  html {
+    font-size: 50%;
+  }
+
+  .container {
+    width: 100%;
+  }
 }
 
-@media only screen and (max-width: 50em){
-    body:after{
-        line-height: 5rem;
-        top: 23%;
-    }
+@media only screen and (max-width: 50em) {
+  body:after {
+    line-height: 5rem;
+    top: 23%;
+  }
 }
 
-#scrollTop{
-    width: 7rem;
-    height: 7rem;
-    position: fixed;
-    bottom: 3rem;
-    right: 5rem;
-    transition: all .2s;
-    cursor: pointer;
+#scrollTop {
+  width: 7rem;
+  height: 7rem;
+  position: fixed;
+  bottom: 3rem;
+  right: 5rem;
+  transition: all .2s;
+  cursor: pointer;
 
-    & > img{
-        width: 100%;
-    }
+  &>img {
+    width: 100%;
+  }
 }
